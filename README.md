@@ -1,7 +1,4 @@
 # XRTerra_ARBeanbagTos
-
-<<<<<<< HEAD
-This is our project based on the Hario v60. 
 =======
 This is our project based on the Hario v60.
 
