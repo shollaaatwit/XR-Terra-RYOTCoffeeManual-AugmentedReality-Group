@@ -6,11 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/ImageTracking/Scenes/ImageTracking.unity
-    guid: 90c9c5e58ea6f4125979d49ff7533aee
-  - enabled: 1
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/ARFoundationDemos/UX/Scenes/UXManagerScene.unity
     guid: 5d9539f4c7ee5c74c85a038c90cb6e1b
+  - enabled: 1
+    path: Assets/Sholla_Assets/Scenes/Main.unity
+    guid: 1ee31375270d1ae4e82a555ee7320809
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 5d15af97db930a94bbb1abe5dd580826,
       type: 2}
