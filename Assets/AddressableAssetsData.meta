@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/AlexAssets.meta
+guid: 838fd6a587e6f9849afe7437974ba632
+=======
 guid: df436d790ff6a454097f8e9b2f4fdc11
+>>>>>>> main:Assets/AddressableAssetsData.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
