@@ -66,7 +66,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6485546416703132608
 Transform:
   m_ObjectHideFlags: 0
@@ -333,7 +333,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.01
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -914,7 +914,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 20
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -4758,8 +4758,8 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: dcc43101c0c5f934cbef0dd1f25eee9e, type: 2}
+  - {fileID: 2100000, guid: dcc43101c0c5f934cbef0dd1f25eee9e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4813,6 +4813,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6485546416817993120}
   - component: {fileID: 2747117821268068441}
+  - component: {fileID: 1856383969}
   m_Layer: 0
   m_Name: FullObjectStack
   m_TagString: Untagged
@@ -4852,6 +4853,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1856383969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6485546416817993121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5dd9e58cd21dd14792f00abd1145281, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mug: {fileID: 7482936290092239395}
+  hario: {fileID: 6583023804436910263}
+  filter: {fileID: 0}
+  spoon: {fileID: 2647696562223593852}
+  kettle: {fileID: 6485546416923937181}
+  coffeeGrounds: {fileID: 6485546416703132638}
+  steam: {fileID: 0}
 --- !u!1 &6485546416923937181
 GameObject:
   m_ObjectHideFlags: 0
@@ -4944,6 +4964,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6485546416817993120}
     m_Modifications:
+    - target: {fileID: 5180585140591019015, guid: 0b3aeaeb6f2270340a37401954fadcd2,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dd1b7414e72bf3347a0c50d405c6abb4, type: 2}
     - target: {fileID: 6318003134430429032, guid: 0b3aeaeb6f2270340a37401954fadcd2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5006,6 +5031,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b3aeaeb6f2270340a37401954fadcd2, type: 3}
+--- !u!1 &7482936290092239395 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6694001393192658386, guid: 0b3aeaeb6f2270340a37401954fadcd2,
+    type: 3}
+  m_PrefabInstance: {fileID: 4268678128284741617}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7823713819261374617 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6318003134430429032, guid: 0b3aeaeb6f2270340a37401954fadcd2,
@@ -5099,6 +5130,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hario_V60_Scaled
       objectReference: {fileID: 0}
+    - target: {fileID: 97622747668316493, guid: 04a0e8bf04dfb2b45a3bbd44c4ae01e2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 635868536380325799, guid: 04a0e8bf04dfb2b45a3bbd44c4ae01e2,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a23eb8642b8b99246bcffed281305781, type: 2}
     - target: {fileID: 725365360256408567, guid: 04a0e8bf04dfb2b45a3bbd44c4ae01e2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5234,6 +5275,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Table Spoon
+      objectReference: {fileID: 0}
+    - target: {fileID: 9133242750287647263, guid: 9e3349f0292ff1546aab95a6fbb43c8a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e3349f0292ff1546aab95a6fbb43c8a, type: 3}
