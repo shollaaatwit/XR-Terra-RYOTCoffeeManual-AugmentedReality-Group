@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class ScreenLog : Singleton<ScreenLog>
 {
-
+    //public GameController controller;
     public Text logText;
     // Start is called before the first frame update
     void Start()
     {
-        logText.text = "Hey, is this thing on?";
+
     }
 
     private void _Log(string msg)

@@ -7,6 +7,7 @@ public class StepsObject : Singleton<StepsObject>
 {
     [SerializeField] public static int totalSteps = 13; // 0 indexed
     public GameObject[] stepsAnimations = new GameObject[totalSteps];
+    // TODO replace List with Stack
     public List<Step> stepsList;
 
 

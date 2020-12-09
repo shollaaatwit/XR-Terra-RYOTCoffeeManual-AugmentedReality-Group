@@ -109,7 +109,7 @@ public class ARController : MonoBehaviour
 
     private void _PromptToScan(bool show)
     {
-        scanRoomUIPanel?.SetActive(show);
+        //scanRoomUIPanel?.SetActive(show);
     }
 
 }

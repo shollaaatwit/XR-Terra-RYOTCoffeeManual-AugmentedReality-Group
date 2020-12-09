@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PanelManager : MonoBehaviour
 {
@@ -10,16 +11,16 @@ public class PanelManager : MonoBehaviour
     public GameObject ResetPanel;
     public GameObject TimerPanel;
     public GameObject FinalPanel;
+    public Text ARReady;
+
+    void Awake()
+    {
+        ARController.OnARRunning.AddListener(CheckForAR);
+    }
 
     void Start()
     {
-        if (!WelcomePanel.activeInHierarchy)
-        {
-            WelcomePanel.SetActive(true);
-        }
 
-        // Can be replaced for unity event
-        StartCoroutine(CheckForAR());
     }
 
     void Update()
@@ -27,15 +28,29 @@ public class PanelManager : MonoBehaviour
         
     }
 
-    IEnumerator CheckForAR()
+    private void CheckForAR(bool ar)
     {
-        yield return new WaitForSeconds(3);
-        WelcomePanel.SetActive(false);
-        SizeChoicePanel.SetActive(true);
+       // yield return new WaitForSeconds(3);
+       // @TODO check condition
+       if (ar)
+       {
+           // @ TODO Possibly add a coroutine for 1sec
+           ARReady.text = "AR is Ready";
+           WelcomePanel.SetActive(false);
+           ARReady.gameObject.SetActive(false);
+               SizeChoicePanel.SetActive(true);
+           ScreenLog.Log("\n AR is Ready --");
+       }
+        else
+       {
+           ARReady.text = "AR Not Supported";
+           ScreenLog.Log("\n AR not supported");
+       }
     }
 
     public void ConfirmSize()
     {
+        ARReady.gameObject.SetActive(false);
         SizeChoicePanel.SetActive(false);
         InstructionsPanel.SetActive(true);
     }
