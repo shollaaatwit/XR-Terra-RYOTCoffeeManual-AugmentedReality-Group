@@ -6,16 +6,65 @@ using UnityEngine;
 public class StepsObject : Singleton<StepsObject>
 {
     [SerializeField] public static int totalSteps = 13; // 0 indexed
-    public GameObject[] stepsAnimations = new GameObject[totalSteps];
     // TODO replace List with Stack
     public List<Step> stepsList;
 
 
+
+    public Stack<_Step> stepStack = new Stack<_Step>(); // instantiates new Stack with datatype _Step
+
+    private int count = 0;
+
+    public _Step steps;
+    private _Step hold;
+
+
+    public bool IsAtEnd()
+    {
+        if(count == steps.instructions.Length-1)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public _Step CurrentStep()
+    {
+        return stepStack.Peek();
+    }
+    public void NextStep()
+    {
+        count++;
+    }
+    public void PreviousStep()
+    {
+        stepStack.Pop();
+        count--;
+    }
+
+    public void PlayStep() //activates current step
+    {
+        NextStep();
+        CurrentStep();
+        Debug.Log(CurrentStep().instructions[count]);
+        Debug.Log(count);
+        ScreenLog.Log("\n" + CurrentStep().instructions[count]);
+    }
+
+    void Awake() //fills stack with first step
+    {
+        stepStack.Push(steps);
+    }
     void Start() 
     {
-        stepsList = new List<Step>();
-        FillList();
+        Debug.Log(CurrentStep().instructions[count]);
+        Debug.Log(count);
+        ScreenLog.Log("\n" + CurrentStep().instructions[count]);
     }
+
+
+
+
 
     // Default recipe 
     private Dictionary<int, string> _stepStrings = new Dictionary<int, string>()
