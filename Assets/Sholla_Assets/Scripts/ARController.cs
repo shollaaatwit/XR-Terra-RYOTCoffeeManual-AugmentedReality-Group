@@ -28,8 +28,9 @@ public class ARController : MonoBehaviour
                                 planeManager.trackables.count > 0);
 
     public static BooleanEvent OnARRunning = new BooleanEvent();
-    // Start is called before the first frame update
-    void Start()
+    public static BooleanEvent OnPlaneScannedEvent= new BooleanEvent();
+
+    private void Start()
     {
 #if UNITY_EDITOR
         allowARMode = false;
@@ -68,13 +69,6 @@ public class ARController : MonoBehaviour
         defaultCamera?.gameObject.SetActive(!enable);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
     IEnumerator _WaitForARReady()
     {
         bool checking = true;
@@ -89,6 +83,7 @@ public class ARController : MonoBehaviour
             if(ARSession.state >= ARSessionState.Ready)
             {   
                 checking = false;
+                OnARRunning.Invoke(true);
             }
             yield return null;
         }
@@ -103,13 +98,13 @@ public class ARController : MonoBehaviour
         }
         _PromptToScan(false);
 
-        OnARRunning.Invoke(true);
+        OnPlaneScannedEvent.Invoke(true);
         ScreenLog.Log("\nTracked planes!");
     }
 
     private void _PromptToScan(bool show)
     {
-        //scanRoomUIPanel?.SetActive(show);
+        scanRoomUIPanel?.SetActive(show);
     }
 
 }

@@ -7,9 +7,10 @@ public class StepsObject : Singleton<StepsObject>
 {
     [SerializeField] public static int totalSteps = 13; // 0 indexed
     // TODO replace List with Stack
-    public List<Step> stepsList;
+    public static List<Step> stepsList;
 
 
+    //new void Awake()
 
     public Stack<_Step> stepStack = new Stack<_Step>(); // instantiates new Stack with datatype _Step
 
