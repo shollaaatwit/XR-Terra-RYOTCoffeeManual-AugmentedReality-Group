@@ -53,6 +53,7 @@ public class StackController : MonoBehaviour
         PourWaterAnimation();
         StopPouringWaterAnimation();
         UseSpoonToStirAnimation();
+        StopStirAnimation();
         ShowHands();
         StopSwirl();
 
