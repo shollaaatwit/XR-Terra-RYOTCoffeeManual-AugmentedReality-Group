@@ -1,7 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.CodeDom;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEditor;
+using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
@@ -27,6 +30,7 @@ public class GameController : Singleton<GameController>
     public int currentStep;
     public float coffeeAmountTbs;
     public float waterAmountCups;
+    public string coffeeAmount;
 
     public bool choiceConfirmed;
     public TextMeshProUGUI StepInstructionText;
@@ -35,9 +39,13 @@ public class GameController : Singleton<GameController>
 
     public PanelManager panelManager;
 
+    public static BooleanEvent OnChoosenCoffeeAmountEvent = new BooleanEvent();
+
+
     private void Start()
     {
         recipeList = StepsObject.stepsList;
+    
         choiceConfirmed = false;
         currentStep = 0;
         coffeeSizeChoice = 0;
@@ -97,7 +105,7 @@ public class GameController : Singleton<GameController>
             // 16 ounces
             case 2:
                 coffeeAmountTbs = 5.33f;
-                waterAmountCups = 2.25f;
+                waterAmountCups = 2.75f; 
                 break;
 
             default:
@@ -108,6 +116,8 @@ public class GameController : Singleton<GameController>
         ScreenLog.Log("\n" + coffeeAmountTbs + "\n" + waterAmountCups);
         print(coffeeSizeChoice);
         ReadSteps();
+        coffeeAmount = ConvertToVolumes("coffee", coffeeAmountTbs);
+        OnChoosenCoffeeAmountEvent.Invoke(true);
     }
 
     public void HandleNextStepButton()
@@ -134,6 +144,21 @@ public class GameController : Singleton<GameController>
             ReadSteps();
         }
        
+    }
+
+    public string ConvertToVolumes(string type, float amount)
+    {
+        if (type == "coffee")
+        {
+            // return int 1 or 2 if theres decimals, else returns 0 
+            int teaspoonAmount = !(amount % 1 == 0) ? Int16.Parse(amount.ToString("0.00").Split('.')[1]) / 33 : 0;
+
+            return amount.ToString("0") + " Tablespoons" +
+                   ((teaspoonAmount != 0) ? " and " + teaspoonAmount.ToString() + " teaspoons" : "");
+        }
+        // for the boil this amount of water
+        // will that be step 1 | 0? 
+        return "cups";
     }
 
     private void ReadSteps()
