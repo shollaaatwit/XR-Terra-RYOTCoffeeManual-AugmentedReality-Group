@@ -75,7 +75,7 @@ public class PlaceObjectsOnPlane : MonoBehaviour
                     else
                     {
                         // TODO give them option to move object 
-                        spawnedObject.transform.SetPositionAndRotation(hitPose.position, hitPose.rotation);
+                        // spawnedObject.transform.SetPositionAndRotation(hitPose.position, hitPose.rotation);
                     }
                     
                     if (onPlacedObject != null)

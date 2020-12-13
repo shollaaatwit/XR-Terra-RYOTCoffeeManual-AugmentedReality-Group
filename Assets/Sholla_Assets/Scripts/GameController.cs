@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEditor;
-using UnityEditor.UIElements;
+// using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
@@ -156,21 +156,6 @@ public class GameController : Singleton<GameController>
             ReadSteps();
         }
 
-    }
-
-    public string ConvertToVolumes(string type, float amount)
-    {
-        if (type == "coffee")
-        {
-            // return int 1 or 2 if theres decimals, else returns 0 
-            int teaspoonAmount = !(amount % 1 == 0) ? Int16.Parse(amount.ToString("0.00").Split('.')[1]) / 33 : 0;
-
-            return amount.ToString("0") + " Tablespoons" +
-                   ((teaspoonAmount != 0) ? " and " + teaspoonAmount.ToString() + " teaspoons" : "");
-        }
-        // for the boil this amount of water
-        // will that be step 1 | 0? 
-        return "cups";
     }
 
     public string ConvertToVolumes(string type, float amount)
