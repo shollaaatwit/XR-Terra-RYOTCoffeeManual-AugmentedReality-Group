@@ -8,6 +8,7 @@ public class StackController : MonoBehaviour
     public GameObject hario;
     public GameObject filter;
     public GameObject groundsSpoon;
+    public GameObject coffee;
     public GameObject stirSpoon;
     public GameObject kettle;
     public ParticleSystem coffeeGrounds;
@@ -130,7 +131,7 @@ public class StackController : MonoBehaviour
             coffeeGrounds.gameObject.SetActive(false);
 
         }
-        // print(spoon.gameObject.transform.rotation.x * Mathf.Rad2Deg);
+        coffee.gameObject.SetActive(false);
     }
 
     public void FinishAddingCoffeeGroundsStep()
@@ -143,6 +144,7 @@ public class StackController : MonoBehaviour
             coffeeGrounds.gameObject.SetActive(false);
             groundsSpoon.SetActive(false);
             coffeeGrounds.gameObject.SetActive(false);
+            coffee.gameObject.SetActive(true);
         }
     }
 
