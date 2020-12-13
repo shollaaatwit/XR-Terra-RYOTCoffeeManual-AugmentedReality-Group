@@ -44,20 +44,7 @@ public class StackController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ShowHarioPlacementAnimation();
-        SetHarioPlacement();
-        ShowFilterPlacementAnimation();
-        SetFilterPlacement();
-        PourCoffeeGroundsAnimation();
-        FinishAddingCoffeeGroundsStep();
-        PourWaterAnimation();
-        StopPouringWaterAnimation();
-        UseSpoonToStirAnimation();
-        StopStirAnimation();
-        ShowHands();
-        StopSwirl();
 
-        // time += Time.deltaTime;
         if (isSwirling)
         {
             swirlTime += Time.deltaTime * swirlSpeed;
@@ -71,56 +58,49 @@ public class StackController : MonoBehaviour
         }
     }
 
+    public void InvokeAnimation(string functionName)
+    {
+        Invoke(functionName, 0);
+    }
+
     public void ShowHarioPlacementAnimation()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            print("ShowHarioPlacementAnimation fn fired");
-            hario.SetActive(true);
-        }
-        
+        print("ShowHarioPlacementAnimation fn fired");
+        hario.SetActive(true);
     }
 
     public void SetHarioPlacement()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            print("SetHarioPlacement fn fired");
-            Animator harioAnimation = hario.GetComponent<Animator>();
-            harioAnimation.enabled = false;
-            hario.transform.localPosition = harioRestingPlace;
-        }
+        print("SetHarioPlacement fn fired");
+        Animator harioAnimation = hario.GetComponent<Animator>();
+        harioAnimation.enabled = false;
+        hario.transform.localPosition = harioRestingPlace;
     }
 
     public void ShowFilterPlacementAnimation()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            print("ShowFilterPlacementAnimation fn fired");
-            filter.SetActive(true);
-        }
+        SetHarioPlacement();
+        print("ShowFilterPlacementAnimation fn fired");
+        filter.SetActive(true);
     }
 
     public void SetFilterPlacement()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
+       
             step5 = false;
             print("SetFilterPlacement fn fired");
             Animator filterAnimation = filter.GetComponent<Animator>();
             filterAnimation.enabled = false;
             filter.transform.localPosition = filterRestingPlace;
-        }
+        
     }
 
     public void PourCoffeeGroundsAnimation()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            step5 = true;
-            print("PourCoffeeGroundsAnimation fn fired");
-            groundsSpoon.SetActive(true);            
-        }
+        step5 = true;
+        print("PourCoffeeGroundsAnimation fn fired");
+        groundsSpoon.SetActive(true);            
+        
         if ((groundsSpoon.gameObject.transform.rotation.x * Mathf.Rad2Deg) < -36f && step5)
         {
             coffeeGrounds.gameObject.SetActive(true);
@@ -135,63 +115,59 @@ public class StackController : MonoBehaviour
 
     public void FinishAddingCoffeeGroundsStep()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha6))
-        {
-            step5 = false;
-            print("FinishAddingCoffeeGroundsStep fn fired");
-            // coffeeGrounds.Stop();
-            coffeeGrounds.gameObject.SetActive(false);
-            groundsSpoon.SetActive(false);
-            coffeeGrounds.gameObject.SetActive(false);
-        }
+       
+        step5 = false;
+        print("FinishAddingCoffeeGroundsStep fn fired");
+        // coffeeGrounds.Stop();
+        coffeeGrounds.gameObject.SetActive(false);
+        groundsSpoon.SetActive(false);
+        coffeeGrounds.gameObject.SetActive(false);
+        
     }
 
+    public void FirstWaterPour()
+    {
+        SetFilterPlacement();
+        PourWaterAnimation();
+    }
+
+  
     public void PourWaterAnimation()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha7))
-        {
-            kettle.SetActive(true);
-            print("PourWaterAnimation fn fired");
-        }
+     
+        kettle.SetActive(true);
+        print("PourWaterAnimation fn fired");
+        
     }
 
     public void StopPouringWaterAnimation()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha8))
-        {
-            kettle.SetActive(false);
+        kettle.SetActive(false);
             print("StopPouringWaterAnimation fn fired");
-        }
+        
     }
 
     public void UseSpoonToStirAnimation()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha9))
-        {
-            print("UseSpoonToStirAnimation fn fired");
+        print("UseSpoonToStirAnimation fn fired");
             stirSpoon.SetActive(true);
             isStirring = true;
-        }
     }
 
     public void StopStirAnimation()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha0))
-        {
-            print("StopStirAnimation fn fired");
+        print("StopStirAnimation fn fired");
             stirSpoon.SetActive(false);
             isStirring = false;
-        }
+        
     }
 
     public void ShowHands()
     {
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            print("ShowHands fn fired");
-            hands.SetActive(true);
-            isSwirling = true;
-        }
+        print("ShowHands fn fired");
+        hands.SetActive(true); 
+        isSwirling = true;
+        
     }
 
     public void Swirl()
@@ -203,14 +179,12 @@ public class StackController : MonoBehaviour
         cubeParent.transform.position = new Vector3(timeX, timeY, timeZ) / 14;
     }
 
-    public void StopSwirl()
+    public void HideHands()
     {
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            print("Stop swirl fn fired");
+         print("Stop swirl fn fired");
             hands.SetActive(false);
             isSwirling = false;
-        }
+        
     }
 
     public void Stir()

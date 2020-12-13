@@ -40,32 +40,44 @@ public class GameController : Singleton<GameController>
     public PanelManager panelManager;
 
     public static BooleanEvent OnChoosenCoffeeAmountEvent = new BooleanEvent();
+    public StackController stackController;
 
+    public PlaceObjectsOnPlane placeObjectsOnPlane;
 
     private void Start()
     {
+        //stackController = GetComponent<StackController>();
         recipeList = StepsObject.stepsList;
-    
         choiceConfirmed = false;
         currentStep = 0;
         coffeeSizeChoice = 0;
-        ScreenLog.Log( "\n" + currentStep.ToString() );
+        ScreenLog.Log("\n" + currentStep.ToString());
     }
 
     private new void Awake()
     {
         ARController.OnARRunning.AddListener(OnARRunningListener);
         PanelManager.ResetInstructions.AddListener(ResetGameLogic);
+        PlaceObjectsOnPlane.onObjectPlacedEvent.AddListener(FindStackController);
     }
 
     private void Update()
     {
-   
+       
+    }
+
+    public void FindStackController(bool objectPlaced)
+    {
+        if (objectPlaced)
+        {
+            ScreenLog.Log("object placed, maybe found");
+            stackController = GameObject.Find("FullObjectStack").GetComponent<StackController>();
+        }
     }
 
     private void ResetGameLogic(bool reset)
     {
-        if(reset)
+        if (reset)
         {
             choiceConfirmed = false;
             currentStep = 0;
@@ -105,7 +117,7 @@ public class GameController : Singleton<GameController>
             // 16 ounces
             case 2:
                 coffeeAmountTbs = 5.33f;
-                waterAmountCups = 2.75f; 
+                waterAmountCups = 2.75f;
                 break;
 
             default:
@@ -131,9 +143,9 @@ public class GameController : Singleton<GameController>
         else
         {
             panelManager.HandleLastStep();
-           // PanelManager.HandleLastStep();
+            // PanelManager.HandleLastStep();
         }
-       
+
     }
 
     public void HandlePreviousStepButton()
@@ -143,7 +155,22 @@ public class GameController : Singleton<GameController>
             currentStep -= 1;
             ReadSteps();
         }
-       
+
+    }
+
+    public string ConvertToVolumes(string type, float amount)
+    {
+        if (type == "coffee")
+        {
+            // return int 1 or 2 if theres decimals, else returns 0 
+            int teaspoonAmount = !(amount % 1 == 0) ? Int16.Parse(amount.ToString("0.00").Split('.')[1]) / 33 : 0;
+
+            return amount.ToString("0") + " Tablespoons" +
+                   ((teaspoonAmount != 0) ? " and " + teaspoonAmount.ToString() + " teaspoons" : "");
+        }
+        // for the boil this amount of water
+        // will that be step 1 | 0? 
+        return "cups";
     }
 
     public string ConvertToVolumes(string type, float amount)
@@ -163,8 +190,14 @@ public class GameController : Singleton<GameController>
 
     private void ReadSteps()
     {
-       
-            StepInstructionText.text = recipeList[currentStep].stepInstruction;
+
+        StepInstructionText.text = recipeList[currentStep].stepInstruction;
+
+        if (recipeList[currentStep].animationFunction.Length > 0 && stackController)
+        {
+            //Invoke(recipeList[currentStep].animationFunction, 0);
+            stackController.InvokeAnimation(recipeList[currentStep].animationFunction);
+        }
 
     }
 
@@ -173,7 +206,7 @@ public class GameController : Singleton<GameController>
         ScreenLog.Log("OnARRunningListener: " + ar);
         //nonAREnvironment.SetActive(!ar); //places setting for working in non AR
 
-        if(ar)
+        if (ar)
         {
             //do something if AR is active
 

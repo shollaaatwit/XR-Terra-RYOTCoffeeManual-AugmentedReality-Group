@@ -29,6 +29,8 @@ public class PlaceObjectsOnPlane : MonoBehaviour
     /// Invoked whenever an object is placed in on a plane.
     /// </summary>
     public static event Action onPlacedObject;
+    public static BooleanEvent onObjectPlacedEvent = new BooleanEvent();
+
 
     ARRaycastManager m_RaycastManager;
 
@@ -38,15 +40,22 @@ public class PlaceObjectsOnPlane : MonoBehaviour
     int m_MaxNumberOfObjectsToPlace = 1;
 
     int m_NumberOfPlacedObjects = 0;
+    private GameController gameController;
 
     void Awake()
     {
         m_RaycastManager = GetComponent<ARRaycastManager>();
     }
 
+    void Start()
+    {
+        gameController = GameObject.Find("GameManager").GetComponent<GameController>();
+    }
+
     void Update()
     {
-        if (Input.touchCount > 0)
+        // TODO only allow place after step 0
+        if (Input.touchCount > 0 && gameController.currentStep > 0 )
         {
             Touch touch = Input.GetTouch(0);
 
@@ -61,9 +70,11 @@ public class PlaceObjectsOnPlane : MonoBehaviour
                         spawnedObject = Instantiate(m_PlacedPrefab, hitPose.position, hitPose.rotation);
                         
                         m_NumberOfPlacedObjects++;
+                        onObjectPlacedEvent.Invoke(true);
                     }
                     else
                     {
+                        // TODO give them option to move object 
                         spawnedObject.transform.SetPositionAndRotation(hitPose.position, hitPose.rotation);
                     }
                     
