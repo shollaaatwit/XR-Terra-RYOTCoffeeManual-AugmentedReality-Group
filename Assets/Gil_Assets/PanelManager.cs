@@ -15,6 +15,9 @@ public class PanelManager : Singleton<PanelManager>
 
     public static BooleanEvent ResetInstructions = new BooleanEvent();
 
+    public Image imageBackground;
+    public Color instructionsColor;
+
 
     private new void Awake()
     {
@@ -28,6 +31,8 @@ public class PanelManager : Singleton<PanelManager>
         {
             WelcomePanel.SetActive(true);
         }
+        imageBackground = InstructionsPanel.GetComponent<Image>();
+        instructionsColor = imageBackground.color;
     }
 
 
@@ -95,6 +100,18 @@ public class PanelManager : Singleton<PanelManager>
         InstructionsPanel.SetActive(false);
         TimerPanel.SetActive(false);
         FinalPanel.SetActive(true);
+    }
+
+    public void ChangePanelAlpha(bool isNext)
+    {
+        if (isNext)
+        {
+            imageBackground.color = new Color(imageBackground.color.r, imageBackground.color.g, imageBackground.color.b, 0f);
+        }
+        else
+        {
+            imageBackground.color = instructionsColor;
+        }
     }
 
     public void EndAppSession()

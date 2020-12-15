@@ -156,7 +156,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -30}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 675, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &127396664
 MonoBehaviour:
@@ -177,7 +177,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: o
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -219,10 +219,10 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 0
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -246,13 +246,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 127396664}
-    characterCount: 1
+    characterCount: 0
     spriteCount: 0
     spaceCount: 0
-    wordCount: 1
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -363,6 +363,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2442094857477725210, guid: 70ca1f874e67728469bb33fe9398f284,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2442094857487833265, guid: 70ca1f874e67728469bb33fe9398f284,
         type: 3}
@@ -487,7 +492,7 @@ PrefabInstance:
     - target: {fileID: 2442094857594817443, guid: 70ca1f874e67728469bb33fe9398f284,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2442094857750360104, guid: 70ca1f874e67728469bb33fe9398f284,
         type: 3}
@@ -518,6 +523,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2442094857750360105, guid: 70ca1f874e67728469bb33fe9398f284,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2442094857816721727, guid: 70ca1f874e67728469bb33fe9398f284,
         type: 3}
@@ -652,7 +662,7 @@ PrefabInstance:
     - target: {fileID: 2442094859056712084, guid: 70ca1f874e67728469bb33fe9398f284,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2442094859244833513, guid: 70ca1f874e67728469bb33fe9398f284,
         type: 3}
@@ -678,6 +688,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2442094859426756788, guid: 70ca1f874e67728469bb33fe9398f284,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2442094859426756788, guid: 70ca1f874e67728469bb33fe9398f284,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2442094859426756788, guid: 70ca1f874e67728469bb33fe9398f284,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.9116585
+      objectReference: {fileID: 0}
+    - target: {fileID: 2442094859426756788, guid: 70ca1f874e67728469bb33fe9398f284,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.8254717
       objectReference: {fileID: 0}
     - target: {fileID: 2442094859426756794, guid: 70ca1f874e67728469bb33fe9398f284,
         type: 3}
@@ -1507,6 +1537,8 @@ MonoBehaviour:
   TimerPanel: {fileID: 1994527905}
   FinalPanel: {fileID: 1959982903}
   ARReady: {fileID: 1870697953}
+  imageBackground: {fileID: 0}
+  instructionsColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &1798293667
 Transform:
   m_ObjectHideFlags: 0
