@@ -64,7 +64,7 @@ public class GameController : Singleton<GameController>
 
     private void Update()
     {
-       
+       HandleResetLocationButton();
     }
 
     public void FindStackController(bool objectPlaced)
@@ -168,6 +168,25 @@ public class GameController : Singleton<GameController>
             ReadSteps();
         }
 
+    }
+
+    public void HandleResetLocationButton()
+    {
+         
+        if (recipeList[currentStep].isSecondStep)
+        {
+            panelManager.ResetCupLocationButton(true);
+        }
+        else
+        {
+            panelManager.ResetCupLocationButton(false);
+        }
+    }
+    public void OnResetLocationButton()
+    {
+        placeObjectsOnPlane.placedObject = true;
+        placeObjectsOnPlane.spawnedObject?.SetActive(false);
+        ScreenLog.Log("\n OnResetLocation");
     }
 
     public string ConvertToVolumes(string type, float amount)

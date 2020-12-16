@@ -11,6 +11,9 @@ public class PanelManager : Singleton<PanelManager>
     public  GameObject ResetPanel;
     public  GameObject TimerPanel;
     public  GameObject FinalPanel;
+
+    public  GameObject cupLocationButton;
+
     public  Text ARReady;
 
     public static BooleanEvent ResetInstructions = new BooleanEvent();
@@ -112,6 +115,9 @@ public class PanelManager : Singleton<PanelManager>
         {
             imageBackground.color = instructionsColor;
         }
+    public void ResetCupLocationButton(bool reset) //turns on or off reset location button
+    {
+        cupLocationButton.SetActive(reset);
     }
 
     public void EndAppSession()

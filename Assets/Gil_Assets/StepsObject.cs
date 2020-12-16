@@ -82,6 +82,7 @@ public class StepsObject : Singleton<StepsObject>
                 {
                     animationFunction = CheckFuncDictionary(i) ,
                     stepInstruction = CheckDictionary(i),
+                    isSecondStep = (i == 1),
                     isLastStep = (i == totalSteps),
                     isTimerInView = (i >= 7) 
                 }
