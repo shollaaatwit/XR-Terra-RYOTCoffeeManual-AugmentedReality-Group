@@ -21,8 +21,7 @@ public class PanelManager : Singleton<PanelManager>
 
     public static BooleanEvent ResetInstructions = new BooleanEvent();
 
-    public Image imageBackground;
-    public Color instructionsColor;
+
 
 
     private new void Awake()
