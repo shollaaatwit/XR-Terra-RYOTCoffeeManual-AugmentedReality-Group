@@ -127,6 +127,7 @@ public class GameController : Singleton<GameController>
                 break;
         }
         ScreenLog.Log("\n" + coffeeAmountTbs + "\n" + waterAmountCups);
+        
         coffeeAmount = ConvertToVolumes("coffee", coffeeAmountTbs);
         waterAmount = ConvertToVolumes("water", waterAmountCups);
         OnChoosenCoffeeAmountEvent.Invoke(true);
@@ -139,6 +140,7 @@ public class GameController : Singleton<GameController>
         {
             panelManager.ChangePanelAlpha(true);
         } 
+        
 
         if (!recipeList[currentStep + 1].isLastStep)
         {
