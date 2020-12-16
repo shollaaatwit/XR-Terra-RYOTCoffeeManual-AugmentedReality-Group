@@ -33,6 +33,7 @@ public class StepsObject : Singleton<StepsObject>
         {
             // hardcoded
             stepsList[6].stepInstruction = $"Add {gameController.coffeeAmount} of coffee";
+            stepsList[0].stepInstruction = $"Add {gameController.waterAmount} of water";
             // change step 0 for water
         }
     }

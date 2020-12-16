@@ -16,6 +16,9 @@ public class PanelManager : Singleton<PanelManager>
 
     public  Text ARReady;
 
+    public Image imageBackground;
+    public Color instructionsColor;
+
     public static BooleanEvent ResetInstructions = new BooleanEvent();
 
 
@@ -31,6 +34,8 @@ public class PanelManager : Singleton<PanelManager>
         {
             WelcomePanel.SetActive(true);
         }
+        imageBackground = InstructionsPanel.GetComponent<Image>();
+        instructionsColor = imageBackground.color;
     }
 
 
@@ -98,6 +103,18 @@ public class PanelManager : Singleton<PanelManager>
         InstructionsPanel.SetActive(false);
         TimerPanel.SetActive(false);
         FinalPanel.SetActive(true);
+    }
+
+    public void ChangePanelAlpha(bool isNext)
+    {
+        if (isNext)
+        {
+            imageBackground.color = new Color(imageBackground.color.r, imageBackground.color.g, imageBackground.color.b, 0f);
+        }
+        else
+        {
+            imageBackground.color = instructionsColor;
+        }
     }
 
     public void ResetCupLocationButton(bool reset) //turns on or off reset location button

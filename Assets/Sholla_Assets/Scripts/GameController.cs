@@ -31,6 +31,7 @@ public class GameController : Singleton<GameController>
     public float coffeeAmountTbs;
     public float waterAmountCups;
     public string coffeeAmount;
+    public string waterAmount;
 
     public bool choiceConfirmed;
     public TextMeshProUGUI StepInstructionText;
@@ -122,18 +123,23 @@ public class GameController : Singleton<GameController>
 
             default:
                 coffeeAmountTbs = 4f;
-                waterAmountCups = 2f;
+                waterAmountCups = 1.75f;
                 break;
         }
         ScreenLog.Log("\n" + coffeeAmountTbs + "\n" + waterAmountCups);
-        print(coffeeSizeChoice);
-        ReadSteps();
         coffeeAmount = ConvertToVolumes("coffee", coffeeAmountTbs);
+        waterAmount = ConvertToVolumes("water", waterAmountCups);
         OnChoosenCoffeeAmountEvent.Invoke(true);
+        ReadSteps();
     }
 
     public void HandleNextStepButton()
     {
+        if (currentStep == 0)
+        {
+            panelManager.ChangePanelAlpha(true);
+        } 
+
         if (!recipeList[currentStep + 1].isLastStep)
         {
             currentStep += 1;
@@ -150,6 +156,11 @@ public class GameController : Singleton<GameController>
 
     public void HandlePreviousStepButton()
     {
+        if (currentStep == 1)
+        {
+            panelManager.ChangePanelAlpha(false);
+        }
+
         if (currentStep > 0)
         {
             currentStep -= 1;
@@ -189,7 +200,17 @@ public class GameController : Singleton<GameController>
         }
         // for the boil this amount of water
         // will that be step 1 | 0? 
-        return "cups";
+        if (type == "water")
+        {
+            // return 1-3
+            int quaterCupsAmount = !(amount % 1 == 0) ? Int16.Parse(amount.ToString("0.00").Split('.')[1]) / 25 : 0;
+
+            //return "cups";
+            return amount.ToString("0") + " cups" +
+                   ((quaterCupsAmount != 0) ? " and " + quaterCupsAmount.ToString() + "/4 cups" : "");
+        }
+
+        return "";
     }
 
     private void ReadSteps()
