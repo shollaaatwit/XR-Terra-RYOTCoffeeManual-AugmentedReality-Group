@@ -188,7 +188,7 @@ public class GameController : Singleton<GameController>
             int quaterCupsAmount = !(amount % 1 == 0) ? Int16.Parse(amount.ToString("0.00").Split('.')[1]) / 25 : 0;
 
             //return "cups";
-            return amount.ToString("0") + " Cups" +
+            return amount.ToString("0") + " cups" +
                    ((quaterCupsAmount != 0) ? " and " + quaterCupsAmount.ToString() + "/4 cups" : "");
         }
 
