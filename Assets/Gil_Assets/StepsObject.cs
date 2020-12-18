@@ -57,18 +57,18 @@ public class StepsObject : Singleton<StepsObject>
 
     private Dictionary<int, string> _stepAnimationFunctions = new Dictionary<int, string>()
     {
-        {2, "ShowHarioPlacementAnimation"},
-        {3, "ShowFilterPlacementAnimation"},
-        {4, "FirstWaterPour"}, //PourWaterAnimation
+        {2, "StepOne"},
+        {3, "StepTwo"},
+        {4, "StepThree"}, //PourWaterAnimation
         //@TODO step 5 pour out water replace with sink
-        {5, "StopPouringWaterAnimation"},
-        {6, "PourCoffeeGroundsAnimation"},
-        {7, "FinishAddingCoffeeGroundsStep"},
-        {8, "PourWaterAnimation"},
-        {9, "ShowHands"},
-        {10, "HideHands"},
-        {12, "PourWaterAnimation"},
-        {13, "PourWaterAnimation"}
+        {5, "StepFour"},
+        {6, "StepFive"},
+        {7, "StepSix"},
+        {8, "StepSeven"},
+        {9, "StepEight"},
+        {10, "StepNine"},
+        {12, "StepTen"},
+        {13, "StepEleven"}
     };
 
  
