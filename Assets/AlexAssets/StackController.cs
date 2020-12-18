@@ -281,7 +281,7 @@ public class StackController : MonoBehaviour
         float timeZ = Mathf.Sin(swirlTime);
         float timeY = 0;
 
-        cubeParent.transform.position = new Vector3(timeX, timeY, timeZ) / 14;
+        cubeParent.transform.localPosition = new Vector3(timeX, timeY, timeZ) / 14;
     }
 
     public void HideHands()
