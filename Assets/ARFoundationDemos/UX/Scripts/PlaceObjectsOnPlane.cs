@@ -7,6 +7,8 @@ using UnityEngine.XR.ARSubsystems;
 [RequireComponent(typeof(ARRaycastManager))]
 public class PlaceObjectsOnPlane : MonoBehaviour
 {
+    public bool placedObject;
+
     [SerializeField]
     [Tooltip("Instantiates this prefab on a plane at the touch location.")]
     GameObject m_PlacedPrefab;
@@ -54,8 +56,8 @@ public class PlaceObjectsOnPlane : MonoBehaviour
 
     void Update()
     {
-        // TODO only allow place after step 0
-        if (Input.touchCount > 0 && gameController.currentStep > 0 )
+        // TODO only allow place on step 2
+        if (Input.touchCount > 0 && gameController.currentStep == 1)
         {
             Touch touch = Input.GetTouch(0);
 
@@ -71,11 +73,21 @@ public class PlaceObjectsOnPlane : MonoBehaviour
                         
                         m_NumberOfPlacedObjects++;
                         onObjectPlacedEvent.Invoke(true);
+                        placedObject = false;
                     }
                     else
                     {
-                        // TODO give them option to move object 
-                        // spawnedObject.transform.SetPositionAndRotation(hitPose.position, hitPose.rotation);
+                        if(placedObject) // enables object to be placed elsewhere
+                        {
+                            spawnedObject.transform.SetPositionAndRotation(hitPose.position, hitPose.rotation);
+                            spawnedObject.SetActive(true);
+                            ScreenLog.Log("\n can replace");
+                            placedObject = false;
+                        }
+                        else
+                        {
+                            ScreenLog.Log("\n no replace");
+                        }
                     }
                     
                     if (onPlacedObject != null)
@@ -86,4 +98,12 @@ public class PlaceObjectsOnPlane : MonoBehaviour
             }
         }
     }
+
+
+
+
+
+
+
+
 }
