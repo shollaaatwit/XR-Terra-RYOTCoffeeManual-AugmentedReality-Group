@@ -456,30 +456,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: ParentCubeForStack
       objectReference: {fileID: 0}
-    - target: {fileID: 2603455718776831971, guid: ee14608b127203b4b9d4bb87fb4068ce,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.468
-      objectReference: {fileID: 0}
-    - target: {fileID: 2603455718776831971, guid: ee14608b127203b4b9d4bb87fb4068ce,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.346
-      objectReference: {fileID: 0}
-    - target: {fileID: 3416690061252928857, guid: ee14608b127203b4b9d4bb87fb4068ce,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4932381378810319187, guid: ee14608b127203b4b9d4bb87fb4068ce,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5708459964088830953, guid: ee14608b127203b4b9d4bb87fb4068ce,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.3273606
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee14608b127203b4b9d4bb87fb4068ce, type: 3}

@@ -17,6 +17,7 @@ public class StackController : MonoBehaviour
     public GameObject handForSinkHold;
     public GameObject sink;
 
+    public GameObject fullObjectStack;
     public GameObject cubeParent;
 
     public int swirlSpeed = 5;
@@ -118,6 +119,7 @@ public class StackController : MonoBehaviour
     public void StepOne() // place hario on mug
     {
         ShowHarioPlacementAnimation();
+        GetStackOffsets();
     }
     public void StepTwo() // place filter in hario
     {
@@ -199,6 +201,14 @@ public class StackController : MonoBehaviour
         Invoke(functionName, 0);
     }
 
+    public void GetStackOffsets()
+    {
+        offsetX = fullObjectStack.transform.position.x;
+        offsetY = fullObjectStack.transform.position.y;
+        offsetZ = fullObjectStack.transform.position.z;
+        print($"offsetx = {offsetX}, offsety = {offsetY}, offsetz = {offsetZ}");
+    }
+
     public void ShowHarioPlacementAnimation()
     {
         print("ShowHarioPlacementAnimation fn fired");
@@ -277,11 +287,12 @@ public class StackController : MonoBehaviour
 
     public void Swirl()
     {
-        float timeX = Mathf.Cos(swirlTime);
-        float timeZ = Mathf.Sin(swirlTime);
-        float timeY = 0;
+        float timeX = Mathf.Cos(swirlTime)/ 4 + offsetX;
+        float timeZ = Mathf.Sin(swirlTime)/ 4 + offsetZ;
+        float timeY = 0 + offsetY;
 
-        cubeParent.transform.localPosition = new Vector3(timeX, timeY, timeZ) / 14;
+        fullObjectStack.transform.localPosition = new Vector3(timeX, timeY, timeZ);
+        print($"timeX: {timeX}, timeZ: {timeZ}, swirltime: {swirlTime}");
     }
 
     public void HideHands()
