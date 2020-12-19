@@ -30,8 +30,13 @@ public class ARController : MonoBehaviour
     public static BooleanEvent OnARRunning = new BooleanEvent();
     public static BooleanEvent OnPlaneScannedEvent= new BooleanEvent();
 
+    public AudioManager audioManager;
+
     private void Start()
     {
+        audioManager = GetComponent<AudioManager>();
+        audioManager.PlaySound(3);
+
 #if UNITY_EDITOR
         allowARMode = false;
 #endif

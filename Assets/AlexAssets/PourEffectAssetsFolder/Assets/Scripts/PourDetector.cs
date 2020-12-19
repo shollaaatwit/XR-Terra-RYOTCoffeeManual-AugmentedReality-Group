@@ -11,6 +11,8 @@ public class PourDetector : MonoBehaviour
     private bool isPouring = false;
     private Stream currentStream = null;
 
+    public static BooleanEvent onPouringEvent = new BooleanEvent();
+
     private void Update()
     {
         bool pourCheck = CalculatePourAngle() < pourThreshold;
@@ -35,6 +37,7 @@ public class PourDetector : MonoBehaviour
         print("Start pour");
         currentStream = CreateStream();
         currentStream.Begin();
+        onPouringEvent.Invoke(true);
     }
 
     private void EndPour()
