@@ -34,6 +34,7 @@ public class ARController : MonoBehaviour
 
     private void Start()
     {
+        // TODO replace sound playing in current panel("Loading")
         audioManager = GetComponent<AudioManager>();
         audioManager.PlaySound(3);
 
