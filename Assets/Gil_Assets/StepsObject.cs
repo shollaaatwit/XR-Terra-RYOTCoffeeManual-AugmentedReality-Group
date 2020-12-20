@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class StepsObject : Singleton<StepsObject>
 {
-    [SerializeField] public static int totalSteps = 13; // 0 indexed
+    [SerializeField] public static int totalSteps = 14; // 0 indexed
     // TODO replace List with Stack
     public static List<Step> stepsList;
 
