@@ -173,7 +173,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e8361172645c57b44875fdbd22a12d67, type: 3}
   - {fileID: 8300000, guid: 501928161c86f3b499a185dcce84bc12, type: 3}
   - {fileID: 8300000, guid: a1c245108a58e0b4799928666c44960f, type: 3}
-  - {fileID: 8300000, guid: 9227deb6808ca5e4ea2314acc31f9c75, type: 3}
+  - {fileID: 8300000, guid: cc40cb0b7cdc2d44ab72becb6b7b3116, type: 3}
 --- !u!82 &527293962
 AudioSource:
   m_ObjectHideFlags: 0
@@ -277,6 +277,42 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 127396663, guid: 70ca1f874e67728469bb33fe9398f284, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 127396663, guid: 70ca1f874e67728469bb33fe9398f284, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 127396663, guid: 70ca1f874e67728469bb33fe9398f284, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 350
+      objectReference: {fileID: 0}
+    - target: {fileID: 127396663, guid: 70ca1f874e67728469bb33fe9398f284, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 127396664, guid: 70ca1f874e67728469bb33fe9398f284, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 127396664, guid: 70ca1f874e67728469bb33fe9398f284, type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 47
+      objectReference: {fileID: 0}
+    - target: {fileID: 127396664, guid: 70ca1f874e67728469bb33fe9398f284, type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 127396664, guid: 70ca1f874e67728469bb33fe9398f284, type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 127396664, guid: 70ca1f874e67728469bb33fe9398f284, type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 719700891, guid: 70ca1f874e67728469bb33fe9398f284, type: 3}
       propertyPath: m_fontSize
       value: 75
@@ -287,6 +323,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 898555873, guid: 70ca1f874e67728469bb33fe9398f284, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 444447811550640838, guid: 70ca1f874e67728469bb33fe9398f284,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2442094857349671210, guid: 70ca1f874e67728469bb33fe9398f284,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2442094857349671210, guid: 70ca1f874e67728469bb33fe9398f284,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2442094857349671210, guid: 70ca1f874e67728469bb33fe9398f284,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2442094857349671210, guid: 70ca1f874e67728469bb33fe9398f284,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2442094857349671210, guid: 70ca1f874e67728469bb33fe9398f284,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2442094857381653332, guid: 70ca1f874e67728469bb33fe9398f284,
@@ -664,8 +730,19 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 730758834}
+    - target: {fileID: 3116447539056098278, guid: 70ca1f874e67728469bb33fe9398f284,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70ca1f874e67728469bb33fe9398f284, type: 3}
+--- !u!1 &531511375 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 444447811550640838, guid: 70ca1f874e67728469bb33fe9398f284,
+    type: 3}
+  m_PrefabInstance: {fileID: 531511374}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &583876878
 GameObject:
   m_ObjectHideFlags: 0
@@ -1074,6 +1151,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4304160105833792374, guid: 373cf9e868a809e43b96d84cc7c3d9fd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 730758834}
+    - target: {fileID: 4304160105833792374, guid: 373cf9e868a809e43b96d84cc7c3d9fd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnResetLocationButton
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 373cf9e868a809e43b96d84cc7c3d9fd, type: 3}
 --- !u!1 &1260130741 stripped
@@ -1337,7 +1424,7 @@ MonoBehaviour:
   timerText: {fileID: 647826266}
   buttonText: {fileID: 1305463750}
   isTimerOn: 0
-  _speed: 0
+  _speed: 1
 --- !u!114 &1798293666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1354,7 +1441,7 @@ MonoBehaviour:
   SizeChoicePanel: {fileID: 1598390703}
   InstructionsPanel: {fileID: 2116822861}
   ResetPanel: {fileID: 1800122180}
-  TimerPanel: {fileID: 1994527905}
+  TimerPanel: {fileID: 531511375}
   FinalPanel: {fileID: 1959982903}
   cupLocationButton: {fileID: 1260130741}
   ARReady: {fileID: 1870697953}
@@ -1461,12 +1548,6 @@ Transform:
 --- !u!1 &1959982903 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2442094859244833513, guid: 70ca1f874e67728469bb33fe9398f284,
-    type: 3}
-  m_PrefabInstance: {fileID: 531511374}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1994527905 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2442094857938160838, guid: 70ca1f874e67728469bb33fe9398f284,
     type: 3}
   m_PrefabInstance: {fileID: 531511374}
   m_PrefabAsset: {fileID: 0}
@@ -1666,6 +1747,11 @@ PrefabInstance:
       propertyPath: scanRoomUIPanel
       value: 
       objectReference: {fileID: 693799271}
+    - target: {fileID: 768845017885027636, guid: 54eaf8e4a7370f04ba48d4cc7959d5ed,
+        type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 527293961}
     - target: {fileID: 768845017885027637, guid: 54eaf8e4a7370f04ba48d4cc7959d5ed,
         type: 3}
       propertyPath: logText
@@ -1691,5 +1777,10 @@ PrefabInstance:
       propertyPath: placeObjectsOnPlane
       value: 
       objectReference: {fileID: 997082853}
+    - target: {fileID: 768845017885027639, guid: 54eaf8e4a7370f04ba48d4cc7959d5ed,
+        type: 3}
+      propertyPath: timerPanel
+      value: 
+      objectReference: {fileID: 531511375}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54eaf8e4a7370f04ba48d4cc7959d5ed, type: 3}
