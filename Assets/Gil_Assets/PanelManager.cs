@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PanelManager : Singleton<PanelManager>
 {
+    public  GameObject LoadingPanel;
     public  GameObject WelcomePanel;
     public  GameObject SizeChoicePanel;
     public  GameObject InstructionsPanel;
@@ -32,6 +33,7 @@ public class PanelManager : Singleton<PanelManager>
 
     private void Start()
     {
+        // TODO replace with loading panel
         if (WelcomePanel && !WelcomePanel.activeInHierarchy)
         {
             WelcomePanel.SetActive(true);
@@ -41,8 +43,7 @@ public class PanelManager : Singleton<PanelManager>
     }
 
 
-    private   void CheckForAR(bool ar)
-
+    private void CheckForAR(bool ar)
     {
         if (ar) 
         {
@@ -62,7 +63,7 @@ public class PanelManager : Singleton<PanelManager>
         }
     }
 
-    private  void IsPlaneScanned(bool planeReady)
+    private void IsPlaneScanned(bool planeReady)
     {
         if (planeReady)
         {
@@ -70,25 +71,25 @@ public class PanelManager : Singleton<PanelManager>
         }
     }
 
-    public  void ConfirmSize()
+    public void ConfirmSize()
     {
         ARReady.gameObject.SetActive(false);
         SizeChoicePanel.SetActive(false);
         InstructionsPanel.SetActive(true);
     }
 
-    public  void handleResetButton()
+    public void handleResetButton()
     {
         InstructionsPanel.SetActive(!InstructionsPanel.activeInHierarchy);
         ResetPanel.SetActive(!ResetPanel.activeInHierarchy);
     }
 
-    public  void toggleTimerPanel()
+    public void toggleTimerPanel()
     {
         TimerPanel.SetActive(!TimerPanel.activeInHierarchy);
     }
     // Takes you to the choice page
-    public  void ResetAppPanels()
+    public void ResetAppPanels()
     {
         // set gameManger's currentStep = 0;
         WelcomePanel.SetActive(false);
@@ -100,7 +101,7 @@ public class PanelManager : Singleton<PanelManager>
         ResetInstructions.Invoke(true);
     }
 
-    public  void HandleLastStep()
+    public void HandleLastStep()
     {
         InstructionsPanel.SetActive(false);
         TimerPanel.SetActive(false);
