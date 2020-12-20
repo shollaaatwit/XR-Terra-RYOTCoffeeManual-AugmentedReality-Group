@@ -203,9 +203,9 @@ public class StackController : MonoBehaviour
 
     public void GetStackOffsets()
     {
-        offsetX = fullObjectStack.transform.position.x;
-        offsetY = fullObjectStack.transform.position.y;
-        offsetZ = fullObjectStack.transform.position.z;
+        offsetX = cubeParent.transform.position.x;
+        offsetY = cubeParent.transform.position.y;
+        offsetZ = cubeParent.transform.position.z;
         print($"offsetx = {offsetX}, offsety = {offsetY}, offsetz = {offsetZ}");
     }
 
@@ -291,7 +291,7 @@ public class StackController : MonoBehaviour
         float timeZ = Mathf.Sin(swirlTime)/ 4 + offsetZ;
         float timeY = 0 + offsetY;
 
-        fullObjectStack.transform.localPosition = new Vector3(timeX, timeY, timeZ);
+        cubeParent.transform.position = new Vector3(timeX, timeY, timeZ);
         print($"timeX: {timeX}, timeZ: {timeZ}, swirltime: {swirlTime}");
     }
 
