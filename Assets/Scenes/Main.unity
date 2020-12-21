@@ -133,6 +133,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &330352748 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6949046446702269678, guid: 70ca1f874e67728469bb33fe9398f284,
+    type: 3}
+  m_PrefabInstance: {fileID: 531511374}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &515120480 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2442094857594817443, guid: 70ca1f874e67728469bb33fe9398f284,
@@ -270,6 +276,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &527293964 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 768845017885027636, guid: 54eaf8e4a7370f04ba48d4cc7959d5ed,
+    type: 3}
+  m_PrefabInstance: {fileID: 768845017473340293}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527293959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c15c1b02b47289c42ae9cd798bd1afa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &531511374
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -322,6 +340,15 @@ PrefabInstance:
       value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 898555873, guid: 70ca1f874e67728469bb33fe9398f284, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 898555900, guid: 70ca1f874e67728469bb33fe9398f284, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 286354052868100390, guid: 70ca1f874e67728469bb33fe9398f284,
+        type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -508,7 +535,7 @@ PrefabInstance:
     - target: {fileID: 2442094857594817443, guid: 70ca1f874e67728469bb33fe9398f284,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2442094857750360104, guid: 70ca1f874e67728469bb33fe9398f284,
         type: 3}
@@ -734,6 +761,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7367002410536898016, guid: 70ca1f874e67728469bb33fe9398f284,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7367002410536898016, guid: 70ca1f874e67728469bb33fe9398f284,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7367002410536898016, guid: 70ca1f874e67728469bb33fe9398f284,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7367002410536898016, guid: 70ca1f874e67728469bb33fe9398f284,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70ca1f874e67728469bb33fe9398f284, type: 3}
@@ -1437,6 +1484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac339e4f53502b4482c1fceda84a7d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LoadingPanel: {fileID: 330352748}
   WelcomePanel: {fileID: 515120480}
   SizeChoicePanel: {fileID: 1598390703}
   InstructionsPanel: {fileID: 2116822861}
@@ -1447,6 +1495,7 @@ MonoBehaviour:
   ARReady: {fileID: 1870697953}
   imageBackground: {fileID: 0}
   instructionsColor: {r: 0, g: 0, b: 0, a: 0}
+  arController: {fileID: 527293964}
 --- !u!4 &1798293667
 Transform:
   m_ObjectHideFlags: 0
