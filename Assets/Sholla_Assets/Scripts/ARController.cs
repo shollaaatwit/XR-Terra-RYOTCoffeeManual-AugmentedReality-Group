@@ -95,10 +95,19 @@ public class ARController : MonoBehaviour
         }
         ScreenLog.Log("\nAR supported");
 
-        _PromptToScan(true);
+      
         ScreenLog.Log("\nTracking planes...");
 
-        while(planeManager.trackables.count == 0)
+        /*
+         *TODO remove checkForPlanes
+         */
+       
+    }
+
+     public IEnumerator CheckForPlanes()
+    {
+        _PromptToScan(true);
+        while (planeManager.trackables.count == 0)
         {
             yield return null;
         }

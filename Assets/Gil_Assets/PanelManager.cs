@@ -20,6 +20,8 @@ public class PanelManager : Singleton<PanelManager>
     public Image imageBackground;
     public Color instructionsColor;
 
+    public ARController arController;
+
     public static BooleanEvent ResetInstructions = new BooleanEvent();
 
 
@@ -34,9 +36,9 @@ public class PanelManager : Singleton<PanelManager>
     private void Start()
     {
         // TODO replace with loading panel
-        if (WelcomePanel && !WelcomePanel.activeInHierarchy)
+        if (LoadingPanel && !LoadingPanel.activeInHierarchy)
         {
-            WelcomePanel.SetActive(true);
+            LoadingPanel.SetActive(true);
         }
         imageBackground = InstructionsPanel.GetComponent<Image>();
         instructionsColor = imageBackground.color;
@@ -45,12 +47,12 @@ public class PanelManager : Singleton<PanelManager>
 
     private void CheckForAR(bool ar)
     {
+        StartCoroutine(DelaySeconds(3, true));
+     
         if (ar) 
         {
-           // @ TODO Possibly add a coroutine for 1sec
-           ARReady.text = "AR is Ready";
-           WelcomePanel.SetActive(false);
-           //ARReady.gameObject.SetActive(false);
+            ARReady.text = "AR is Ready";
+           StartCoroutine(DelaySeconds(4, false));
         }
         else
         {
@@ -62,6 +64,25 @@ public class PanelManager : Singleton<PanelManager>
            
         }
     }
+
+    IEnumerator DelaySeconds(int seconds, bool first)
+    {
+        yield return new WaitForSeconds(seconds);
+
+        if (first)
+        {
+            WelcomePanel.SetActive(true);
+            LoadingPanel.SetActive(false);
+        }
+        if (first == false)
+        {
+            WelcomePanel.SetActive(false);
+            StartCoroutine(arController.CheckForPlanes());
+        }
+
+    }
+
+   
 
     private void IsPlaneScanned(bool planeReady)
     {
@@ -92,6 +113,7 @@ public class PanelManager : Singleton<PanelManager>
     public void ResetAppPanels()
     {
         // set gameManger's currentStep = 0;
+        LoadingPanel.SetActive(false);
         WelcomePanel.SetActive(false);
         InstructionsPanel.SetActive(false);
         TimerPanel.SetActive(false);
