@@ -32,7 +32,8 @@ public class AudioManager : MonoBehaviour
     {
         if (audioClips[clipNum])
         {
-            _audioSource.PlayOneShot(audioClips[clipNum]);
+            _audioSource.clip = audioClips[clipNum];
+            _audioSource.Play();
         }
     }
 }
