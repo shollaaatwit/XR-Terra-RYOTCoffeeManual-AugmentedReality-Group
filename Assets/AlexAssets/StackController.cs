@@ -146,8 +146,8 @@ public class StackController : MonoBehaviour
 
     public void StepForward()
     {
-        currentDirection = Direction.Forward;
-        print($"StepForward Fn fired {currentDirection}");
+        ShowHarioPlacementAnimation();
+        GetStackOffsets();
     }
     public void StepBackward()
     {
@@ -374,6 +374,14 @@ public class StackController : MonoBehaviour
         offsetX = cubeParent.transform.position.x;
         offsetY = cubeParent.transform.position.y;
         offsetZ = cubeParent.transform.position.z;
+        print($"offsetx = {offsetX}, offsety = {offsetY}, offsetz = {offsetZ}");
+    }
+
+    public void ShowHarioPlacementAnimation()
+    {
+        offsetX = cubeParent.transform.position.x;
+        offsetY = cubeParent.transform.position.y;
+        offsetZ = cubeParent.transform.position.z;
     }
 
 
@@ -475,6 +483,12 @@ public class StackController : MonoBehaviour
     {
         hands.SetActive(!hands.activeSelf);
         isSwirling = !isSwirling;
+        float timeX = Mathf.Cos(swirlTime)/ 4 + offsetX;
+        float timeZ = Mathf.Sin(swirlTime)/ 4 + offsetZ;
+        float timeY = 0 + offsetY;
+
+        cubeParent.transform.position = new Vector3(timeX, timeY, timeZ);
+        print($"timeX: {timeX}, timeZ: {timeZ}, swirltime: {swirlTime}");
     }
 
     public void Swirl()

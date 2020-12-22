@@ -34,7 +34,8 @@ public class GameController : Singleton<GameController>
     public string waterAmount;
 
     public bool choiceConfirmed;
-    public TextMeshProUGUI StepInstructionText;
+//  public TextMeshProUGUI StepInstructionText;
+    public Text StepInstructionText;
 
     private List<Step> recipeList;
 
@@ -44,6 +45,7 @@ public class GameController : Singleton<GameController>
     public StackController stackController;
 
     public PlaceObjectsOnPlane placeObjectsOnPlane;
+    public GameObject timerPanel;
 
     private void Start()
     {
@@ -226,6 +228,10 @@ public class GameController : Singleton<GameController>
             stackController.InvokeAnimation(recipeList[currentStep].animationFunction);
         }
 
+        if (recipeList[currentStep].isTimerInView && !timerPanel.activeInHierarchy)
+        {
+            panelManager.toggleTimerPanel();
+        }
     }
 
     private void OnARRunningListener(bool ar)

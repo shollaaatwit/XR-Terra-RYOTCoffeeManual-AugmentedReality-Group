@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PanelManager : Singleton<PanelManager>
 {
+    public  GameObject LoadingPanel;
     public  GameObject WelcomePanel;
     public  GameObject SizeChoicePanel;
     public  GameObject InstructionsPanel;
@@ -19,6 +20,8 @@ public class PanelManager : Singleton<PanelManager>
     public Image imageBackground;
     public Color instructionsColor;
 
+    public ARController arController;
+
     public static BooleanEvent ResetInstructions = new BooleanEvent();
 
 
@@ -32,24 +35,24 @@ public class PanelManager : Singleton<PanelManager>
 
     private void Start()
     {
-        if (WelcomePanel && !WelcomePanel.activeInHierarchy)
+        // TODO replace with loading panel
+        if (LoadingPanel && !LoadingPanel.activeInHierarchy)
         {
-            WelcomePanel.SetActive(true);
+            LoadingPanel.SetActive(true);
         }
         imageBackground = InstructionsPanel.GetComponent<Image>();
         instructionsColor = imageBackground.color;
     }
 
 
-    private   void CheckForAR(bool ar)
-
+    private void CheckForAR(bool ar)
     {
+        StartCoroutine(DelaySeconds(3, true));
+     
         if (ar) 
         {
-           // @ TODO Possibly add a coroutine for 1sec
-           ARReady.text = "AR is Ready";
-           WelcomePanel.SetActive(false);
-           //ARReady.gameObject.SetActive(false);
+            ARReady.text = "AR is Ready";
+           StartCoroutine(DelaySeconds(4, false));
         }
         else
         {
@@ -62,7 +65,26 @@ public class PanelManager : Singleton<PanelManager>
         }
     }
 
-    private  void IsPlaneScanned(bool planeReady)
+    IEnumerator DelaySeconds(int seconds, bool first)
+    {
+        yield return new WaitForSeconds(seconds);
+
+        if (first)
+        {
+            WelcomePanel.SetActive(true);
+            LoadingPanel.SetActive(false);
+        }
+        if (first == false)
+        {
+            WelcomePanel.SetActive(false);
+            StartCoroutine(arController.CheckForPlanes());
+        }
+
+    }
+
+   
+
+    private void IsPlaneScanned(bool planeReady)
     {
         if (planeReady)
         {
@@ -70,27 +92,28 @@ public class PanelManager : Singleton<PanelManager>
         }
     }
 
-    public  void ConfirmSize()
+    public void ConfirmSize()
     {
         ARReady.gameObject.SetActive(false);
         SizeChoicePanel.SetActive(false);
         InstructionsPanel.SetActive(true);
     }
 
-    public  void handleResetButton()
+    public void handleResetButton()
     {
         InstructionsPanel.SetActive(!InstructionsPanel.activeInHierarchy);
         ResetPanel.SetActive(!ResetPanel.activeInHierarchy);
     }
 
-    public  void toggleTimerPanel()
+    public void toggleTimerPanel()
     {
         TimerPanel.SetActive(!TimerPanel.activeInHierarchy);
     }
     // Takes you to the choice page
-    public  void ResetAppPanels()
+    public void ResetAppPanels()
     {
         // set gameManger's currentStep = 0;
+        LoadingPanel.SetActive(false);
         WelcomePanel.SetActive(false);
         InstructionsPanel.SetActive(false);
         TimerPanel.SetActive(false);
@@ -100,7 +123,7 @@ public class PanelManager : Singleton<PanelManager>
         ResetInstructions.Invoke(true);
     }
 
-    public  void HandleLastStep()
+    public void HandleLastStep()
     {
         InstructionsPanel.SetActive(false);
         TimerPanel.SetActive(false);
