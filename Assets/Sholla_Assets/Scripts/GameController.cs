@@ -34,7 +34,8 @@ public class GameController : Singleton<GameController>
     public string waterAmount;
 
     public bool choiceConfirmed;
-    public TextMeshProUGUI StepInstructionText;
+//  public TextMeshProUGUI StepInstructionText;
+    public Text StepInstructionText;
 
     private List<Step> recipeList;
 
