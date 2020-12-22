@@ -153,7 +153,7 @@ public class GameController : Singleton<GameController>
             panelManager.HandleLastStep();
             // PanelManager.HandleLastStep();
         }
-
+        print("HandleNextStep fn fired");
     }
 
     public void HandlePreviousStepButton()
@@ -168,7 +168,7 @@ public class GameController : Singleton<GameController>
             currentStep -= 1;
             ReadSteps();
         }
-
+        print("HandlePreviousStep fn fired");
     }
 
     public void HandleResetLocationButton()
@@ -220,7 +220,7 @@ public class GameController : Singleton<GameController>
 
         StepInstructionText.text = recipeList[currentStep].stepInstruction;
 
-        if (recipeList[currentStep].animationFunction.Length > 0 && stackController)
+        if (recipeList[currentStep].animationFunction.Length > 0) //  && stackController.isActiveAndEnabled
         {
             //Invoke(recipeList[currentStep].animationFunction, 0);
             stackController.InvokeAnimation(recipeList[currentStep].animationFunction);
