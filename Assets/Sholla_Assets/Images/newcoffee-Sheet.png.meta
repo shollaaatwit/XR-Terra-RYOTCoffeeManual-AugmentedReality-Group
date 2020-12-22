@@ -1,0 +1,371 @@
+fileFormatVersion: 2
+guid: e700b8e60b83e02458de0d73ccea8378
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2105384640740329899
+    second: newcoffee-Sheet_0
+  - first:
+      213: 8475219840993199907
+    second: newcoffee-Sheet_1
+  - first:
+      213: -6863324769506881855
+    second: newcoffee-Sheet_2
+  - first:
+      213: 6708967678302444164
+    second: newcoffee-Sheet_3
+  - first:
+      213: -6454191284459186306
+    second: newcoffee-Sheet_4
+  - first:
+      213: -3723322524327954093
+    second: newcoffee-Sheet_5
+  - first:
+      213: 2026778987769181698
+    second: newcoffee-Sheet_6
+  - first:
+      213: -7163519037443499603
+    second: newcoffee-Sheet_7
+  - first:
+      213: 595052029911330747
+    second: newcoffee-Sheet_8
+  - first:
+      213: -7631413414638773419
+    second: newcoffee-Sheet_9
+  - first:
+      213: -9156709369894424400
+    second: newcoffee-Sheet_10
+  - first:
+      213: -502526130468868235
+    second: newcoffee-Sheet_11
+  - first:
+      213: -3391747726114295593
+    second: newcoffee-Sheet_12
+  - first:
+      213: 5662934059091535080
+    second: newcoffee-Sheet_13
+  - first:
+      213: -6358642992185855964
+    second: newcoffee-Sheet_14
+  - first:
+      213: -4118596094589619368
+    second: newcoffee-Sheet_15
+  - first:
+      213: 4053968659732355617
+    second: newcoffee-Sheet_16
+  - first:
+      213: -5370647065412695440
+    second: newcoffee-Sheet_17
+  - first:
+      213: 3501479436957272168
+    second: newcoffee-Sheet_18
+  - first:
+      213: -7127506906974012308
+    second: newcoffee-Sheet_19
+  - first:
+      213: -7545220377278293199
+    second: newcoffee-Sheet_20
+  - first:
+      213: -2319900092052593939
+    second: newcoffee-Sheet_21
+  - first:
+      213: 8501079687592568405
+    second: newcoffee-Sheet_22
+  - first:
+      213: 3976237271256426820
+    second: newcoffee-Sheet_23
+  - first:
+      213: 9002542424875457522
+    second: newcoffee-Sheet_24
+  - first:
+      213: 7192430694980312928
+    second: newcoffee-Sheet_25
+  - first:
+      213: 3051257073748604039
+    second: newcoffee-Sheet_26
+  - first:
+      213: -584452969105731604
+    second: newcoffee-Sheet_27
+  - first:
+      213: -4852048275332513055
+    second: newcoffee-Sheet_28
+  - first:
+      213: -7353718783919832921
+    second: newcoffee-Sheet_29
+  - first:
+      213: -7180089945271118084
+    second: newcoffee-Sheet_30
+  - first:
+      213: 7268009162809302304
+    second: newcoffee-Sheet_31
+  - first:
+      213: -7114190421667670988
+    second: newcoffee-Sheet_32
+  - first:
+      213: -7694856327092111884
+    second: newcoffee-Sheet_33
+  - first:
+      213: 6084921500229391025
+    second: newcoffee-Sheet_34
+  - first:
+      213: -5235326264397154660
+    second: newcoffee-Sheet_35
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: newcoffee-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 720
+        height: 1280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 556fb15f2db28c2e0800000000000000
+      internalID: -2105384640740329899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newcoffee-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 720
+        height: 1280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3270ebfaa870e9570800000000000000
+      internalID: 8475219840993199907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newcoffee-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 0
+        width: 720
+        height: 1280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ce076f4c7290c0a0800000000000000
+      internalID: -6863324769506881855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newcoffee-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 0
+        width: 720
+        height: 1280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48a5bcace8a0b1d50800000000000000
+      internalID: 6708967678302444164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newcoffee-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 0
+        width: 720
+        height: 1280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e775369f83b1e66a0800000000000000
+      internalID: -6454191284459186306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newcoffee-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 0
+        width: 720
+        height: 1280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 359b83124e9145cc0800000000000000
+      internalID: -3723322524327954093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newcoffee-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 4320
+        y: 0
+        width: 720
+        height: 1280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 206353440c0902c10800000000000000
+      internalID: 2026778987769181698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 743bf24edc906544da8adbbf0ddff2a9
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
