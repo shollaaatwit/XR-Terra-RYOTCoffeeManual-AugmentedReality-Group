@@ -1,4 +1,4 @@
-# XRTerra_ARBeanbagTos
+# XRTerra AR Coffee Manual 
 
 
 This is our project based on the Hario v60.
